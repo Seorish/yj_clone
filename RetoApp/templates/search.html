@@ -1,0 +1,101 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/review.css' %}" />
+    <title>리뷰 작성</title>
+  </head>
+  <body>
+    <div class="review-info">
+      <div class="review-info__img">
+        <img src="{% static 'img/toilet01.png'%}" alt="화장실 사진1" class="review-img" />
+        <img src="{% static 'img/toilet02.png' %}" alt="화장실 사진2" class="review-img" />
+      </div>
+      <div class="review-info__title">
+        <div class="toilet-name">시흥하늘휴게소(판교방향)</div>
+        <div class="toilet-address">경기도 시흥시 서울외곽순환고속도로 105 (조남동)</div>
+      </div>
+    </div>
+    <section class="review-section">
+      <div class="review-section__row">
+        <div class="rate-text">사용자 총 평점</div>
+        <div class="rate-show">
+          <img src="{% static 'img/o_logo.png' %}" alt="o 로고" class="img-small" />
+          <div class="rate-show__rating">
+            <span class="rating-avg">4.8</span>
+            <span class="rating-total"> / 5</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-section__row">
+        <div class="quest-title">휴지가 비치되어 있습니까?</div>
+        <div class="quest-icons">
+          <div class="quest-icons__yes">
+            <img src="{% static 'img/paper.png' %}" />
+          </div>
+          <div class="quest-icons__no">
+            <img src="{% static 'img/no.png' %}" alt="발견하지 못함" />
+          </div>
+        </div>
+      </div>
+      <div class="review-section__row">
+        <div class="quest-title">비누가 비치되어 있습니까?</div>
+        <div class="quest-icons">
+          <div class="quest-icons__yes">
+            <img src="{% static 'img/soap.png' %}" />
+          </div>
+          <div class="quest-icons__no">
+            <img src="{% static 'img/no.png' %}" alt="발견하지 못함" />
+          </div>
+        </div>
+      </div>
+      <div class="review-section__row">
+        <div class="quest-title">불법 촬영 장치를 발견하셨습니까?</div>
+        <div class="quest-icons">
+          <div class="quest-icons__yes">
+            <img src="{% static 'img/camera.png' %}" />
+          </div>
+          <div class="quest-icons__no">
+            <img src="{% static 'img/no.png' %}" alt="발견하지 못함" />
+          </div>
+        </div> 
+      </div>
+      <div class="review-section__row">
+        <div class="quest-title">위생에 얼마나 만족하셨습니까?</div>
+        <div class="quest-satisfied">
+          <img src="{% static 'img/o_logo.png' %}" class="img-small" />
+          <input
+            type="number"
+            placeholder="0~5점 사이로 입력해주세요"
+            min="0"
+            max="5"
+            class="quest-satisfied__input"
+          />
+        </div>
+      </div>
+      <div class="review-section__row">
+        <textarea
+          class="quest-write"
+          placeholder="리뷰를 자유롭게 남겨주세요"
+        ></textarea>
+      </div>
+      <div class="review-section__row">
+      <button class="quest-complete-btn">작성 완료</button> 
+      </div>
+    </section>
+    <footer>
+      <ul class="footer-list">
+        <li class="footer-list__link">이용약관</li>
+        <li class="footer-list__link">고객센터</li>
+        <li class="footer-list__link">리뷰운영정책</li>
+        <li class="footer-list__link">신고센터</li>
+      </ul>
+      <img src="{% static 'img/logo.png' %}" />
+    </footer>
+    <script src="{% static 'js/review.js' %}"></script>
+  </body>
+</html>

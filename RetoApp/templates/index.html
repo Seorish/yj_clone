@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+{% csrf_token %}
+
+<input type="text" value="검색어를 입력하세요.">
+<button><a href="{% url 'search' %}">검색</a></button>
+
+<hr/>
+
+{% for i in final %}
+
+{{ i.toiletNm }}<br/>
+{{ i.rdnmadr }}<br/>
+<button><a href="{% url 'review' %}">리뷰 보기</a></button>
+<hr>
+{% endfor %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form }}
+
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
